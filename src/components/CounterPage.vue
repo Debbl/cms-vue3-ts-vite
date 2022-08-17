@@ -1,9 +1,5 @@
 <script setup lang="ts">
-const props = defineProps({
-  counter: {
-    type: Number,
-  },
-});
+const props = defineProps<{ counter: number }>();
 
 console.log(props.counter);
 </script>

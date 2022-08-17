@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import CounterPage from './components/CounterPage.vue';
+import CounterPage from '@/components/CounterPage.vue';
 
 const count = ref(0);
 const increment = () => {
