@@ -25,3 +25,74 @@ max_line_length = off
 trim_trailing_whitespace = false
 ```
 
+## 1.3 ESLint 和 Perttier
+
+### ESLint
+
+- `pnpm i eslint -D`
+- `npx eslint --init`
+
+### Prettier
+
+- `pnpm i prettier -D`
+
+```js
+// .prettierrc.cjs
+module.exports = {
+  useTabs: false, // tab 还是 空格
+  tabWidth: 2, // tab 的宽度
+  printWidth: 80, // 每行的最大字符数
+  singleQuote: true, // 单引号
+  trailingComma: 'es5', // 末尾是否有逗号
+  semi: true, // 是否使用分号
+};
+```
+
+### ESLint Prettier
+
+- `pnpm i eslint-config-prettier -D`
+- `pnpm i eslint-plugin-prettier -D`
+
+```js
+// .eslintrc.cjs
+module.exports = {
+  env: {
+    browser: true,
+    es2021: true,
+    node: true,
+  },
+  extends: [
+    'eslint:recommended',
+    'plugin:vue/vue3-essential',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
+  ],
+  overrides: [],
+  parser: 'vue-eslint-parser',
+  parserOptions: {
+    ecmaVersion: 'latest',
+    parser: '@typescript-eslint/parser',
+    sourceType: 'module',
+  },
+  plugins: ['vue', '@typescript-eslint'],
+  rules: {
+    'prettier/prettier': 'warn',
+  },
+};
+```
+
+### ESLint + Vite
+
+- `pnpm i vite-plugin-eslint -D`
+
+```ts
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import eslint from 'vite-plugin-eslint';
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [vue(), eslint()],
+});
+```
+
