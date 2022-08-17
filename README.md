@@ -96,3 +96,9 @@ export default defineConfig({
 });
 ```
 
+# 2. 技术栈集成
+
+## 2.1 vue-router
+
+> 路由管理
+

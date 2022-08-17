@@ -23,6 +23,9 @@ const foo = (num: number) => {
     <button @click="increment">+</button>
     <button @click="decrement">-</button>
     <h2>{{ foo(count) }}</h2>
+    <RouterLink to="/">home</RouterLink>
+    <RouterLink to="/about">about</RouterLink>
+    <RouterView />
   </div>
 </template>
 
