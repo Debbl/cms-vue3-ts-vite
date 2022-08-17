@@ -102,3 +102,10 @@ export default defineConfig({
 
 > 路由管理
 
+- 按组件分块（动态加载组件）
+
+```js
+const Home = () => import('@/views/Home.vue');
+const About = () => import('@/views/About.vue');
+```
+
