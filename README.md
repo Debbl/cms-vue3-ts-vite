@@ -115,3 +115,8 @@ const About = () => import('@/views/About.vue');
 
 - 按不同的数据分类放入`modules`文件夹中
 
+## 2.3 UI 组件库 element-plus
+
+- 组件使用手动导入，可以清楚的看到使用了那些组件
+- 样式按需导入使用 `unplugin-element-plus` vite 插件
+
