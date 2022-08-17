@@ -4,14 +4,17 @@ import {
   type RouteRecordRaw,
 } from 'vue-router';
 
+const Home = () => import('@/views/Home.vue');
+const About = () => import('@/views/About.vue');
+
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    component: import('@/views/Home.vue'),
+    component: Home,
   },
   {
     path: '/about',
-    component: import('@/views/About.vue'),
+    component: About,
   },
 ];
 
