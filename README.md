@@ -109,3 +109,9 @@ const Home = () => import('@/views/Home.vue');
 const About = () => import('@/views/About.vue');
 ```
 
+## 2.1 pinia
+
+> 状态管理
+
+- 按不同的数据分类放入`modules`文件夹中
+

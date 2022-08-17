@@ -1,28 +1,17 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import CounterPage from '@/components/CounterPage.vue';
+import { storeToRefs } from 'pinia';
+import useCounterStore from '@/stores/modules/counter';
 
-const count = ref(0);
-const increment = () => {
-  count.value++;
-};
-
-const decrement = () => {
-  count.value--;
-};
-
-const foo = (num: number) => {
-  return num + 1;
-};
+const counterStore = useCounterStore();
+const { count } = storeToRefs(counterStore);
 </script>
 
 <template>
   <div>
     <h2>App</h2>
-    <CounterPage :counter="count" />
-    <button @click="increment">+</button>
-    <button @click="decrement">-</button>
-    <h2>{{ foo(count) }}</h2>
+    <h2>{{ count }}</h2>
+    <button @click="count++">+</button>
+    <button @click="count--">-</button>
     <RouterLink to="/">home</RouterLink>
     <RouterLink to="/about">about</RouterLink>
     <RouterView />
