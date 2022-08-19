@@ -1,8 +1,5 @@
-import {
-  createRouter,
-  createWebHistory,
-  type RouteRecordRaw,
-} from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
+import { type RouteRecordRaw } from 'vue-router';
 
 const Home = () => import('@/views/Home.vue');
 const About = () => import('@/views/About.vue');

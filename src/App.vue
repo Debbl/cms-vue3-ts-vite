@@ -2,9 +2,16 @@
 import { storeToRefs } from 'pinia';
 import useCounterStore from '@/stores/modules/counter';
 import { ElButton, ElCheckbox } from 'element-plus';
+import { dRequest } from '@/services';
 
 const counterStore = useCounterStore();
 const { count } = storeToRefs(counterStore);
+
+dRequest.get({ url: 'http://httpbin.org/get' }).then((res) => {
+  console.log(res);
+});
+
+console.log(import.meta.env.VITE_API_BASE_URL);
 </script>
 
 <template>

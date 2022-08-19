@@ -120,3 +120,9 @@ const About = () => import('@/views/About.vue');
 - 组件使用手动导入，可以清楚的看到使用了那些组件
 - 样式按需导入使用 `unplugin-element-plus` vite 插件
 
+## 2.4 axios 集成和封装
+
+- 封装 `axios`在`services/request` ,代理全局的请求，可以方便的自定义请求配置，方便更换请求库
+- 按请求的数据类型分类放在 `services/modules/*`下
+
+- `.env.[mode]` 区分不同的环境
