@@ -137,3 +137,9 @@ const About = () => import('@/views/About.vue');
 
 - normalize.css
 - @/assets/css/reset.less
+
+# 4. 基本功能
+
+## 4.1 登录
+
+- 登录验证
