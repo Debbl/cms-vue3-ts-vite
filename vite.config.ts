@@ -8,6 +8,10 @@ import ElementPlus from 'unplugin-element-plus/vite';
 export default defineConfig({
   plugins: [vue(), eslint(), ElementPlus()],
   base: '/',
+  server: {
+    open: true,
+    hmr: true,
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),

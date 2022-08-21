@@ -131,3 +131,9 @@ const About = () => import('@/views/About.vue');
 
 - loading 动画的显示
 
+# 3. 初始化
+
+## 3.1 CSS 重置
+
+- normalize.css
+- @/assets/css/reset.less
