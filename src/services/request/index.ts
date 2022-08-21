@@ -1,9 +1,9 @@
-import axios from 'axios';
 import type { AxiosInstance } from 'axios';
 import type { DAxiosRequestConfig, DRequestInterceptors } from './type';
+import type { LoadingInstance } from 'element-plus/es/components/loading/src/loading';
+import axios from 'axios';
 import { BASE_URL, TIMEOUT } from './config';
 import { ElLoading } from 'element-plus';
-import type { LoadingInstance } from 'element-plus/es/components/loading/src/loading';
 
 class DRequest {
   instance: AxiosInstance;
@@ -94,7 +94,7 @@ class DRequest {
 const dRequest = new DRequest({
   baseURL: BASE_URL,
   timeout: TIMEOUT,
-  showLoading: true,
+  showLoading: false,
   interceptors: {
     requestInterceptor: (config) => {
       const token = 'token--------';
