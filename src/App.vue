@@ -7,11 +7,24 @@ import { dRequest } from '@/services';
 const counterStore = useCounterStore();
 const { count } = storeToRefs(counterStore);
 
-dRequest.get({ url: 'http://httpbin.org/get' }).then((res) => {
-  console.log(res);
-});
+interface DataType {
+  args: any;
+  headers: any;
+  origin: any;
+  url: string;
+}
 
-console.log(import.meta.env.VITE_API_BASE_URL);
+dRequest.get<DataType>({ url: 'http://httpbin.org/get' }).then((res) => {
+  console.log(res.url);
+});
+dRequest.get<DataType>({ url: 'http://httpbin.org/get' }).then((res) => {
+  console.log(res.url);
+});
+setTimeout(() => {
+  dRequest.get<DataType>({ url: 'http://httpbin.org/get' }).then((res) => {
+    console.log(res.url);
+  });
+}, 3000);
 </script>
 
 <template>

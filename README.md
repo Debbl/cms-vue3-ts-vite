@@ -126,3 +126,7 @@ const About = () => import('@/views/About.vue');
 - 按请求的数据类型分类放在 `services/modules/*`下
 
 - `.env.[mode]` 区分不同的环境
+
+- 封装多级拦截器
+
+- loading 动画的显示
