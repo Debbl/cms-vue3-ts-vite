@@ -10,7 +10,13 @@ export default defineConfig({
   base: '/',
   server: {
     open: true,
-    hmr: true,
+    proxy: {
+      '/api': {
+        target: 'http://152.136.185.210:5000',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+    },
   },
   resolve: {
     alias: {

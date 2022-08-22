@@ -1,12 +1,14 @@
 <script lang="ts" setup>
+import type { CheckboxValueType } from 'element-plus';
 import type { TabPanelName } from 'element-plus';
 import { ref } from 'vue';
 import { ElTabs, ElTabPane, ElCheckbox, ElLink, ElButton } from 'element-plus';
 import { UserFilled, Iphone } from '@element-plus/icons-vue';
 import LoginAccount from './LoginAccount.vue';
 import LoginPhone from './LoginPhone.vue';
+import localCache from '@/utils/localCache';
 
-const isKeepPassword = ref(false);
+const isKeepPassword = ref(localCache.getCache('isKeepPassword'));
 const isShowAccountControl = ref(true);
 const tabClick = (name: TabPanelName) => {
   switch (name) {
@@ -24,15 +26,33 @@ const tabClick = (name: TabPanelName) => {
 // 登录逻辑
 const loginAccountRef = ref<InstanceType<typeof LoginAccount>>();
 const loginClick = () => {
-  loginAccountRef.value?.loginAction();
+  switch (currentSelectedTab.value) {
+    case 'account':
+      loginAccountRef.value?.loginAction(isKeepPassword.value);
+      break;
+    default:
+      return;
+  }
 };
+// 记住密码
+const keepPasswordChange = (val: CheckboxValueType) => {
+  localCache.setCache('isKeepPassword', val);
+  console.log(val);
+};
+// 标签切换
+const currentSelectedTab = ref('account');
 </script>
 
 <template>
   <div class="login-panel">
     <h2 class="title">后台管理系统</h2>
-    <ElTabs type="border-card" stretch @tab-change="tabClick">
-      <ElTabPane>
+    <ElTabs
+      type="border-card"
+      stretch
+      @tab-change="tabClick"
+      v-model="currentSelectedTab"
+    >
+      <ElTabPane name="account">
         <template #label>
           <span class="account">
             <UserFilled style="width: 1em; height: 1em; margin-right: 8px" />
@@ -41,7 +61,7 @@ const loginClick = () => {
         </template>
         <LoginAccount ref="loginAccountRef" />
       </ElTabPane>
-      <ElTabPane>
+      <ElTabPane name="phone">
         <template #label>
           <span class="phone">
             <Iphone style="width: 1em; height: 1em; margin-right: 8px" />
@@ -52,7 +72,9 @@ const loginClick = () => {
       </ElTabPane>
     </ElTabs>
     <div v-if="isShowAccountControl" class="account-control">
-      <ElCheckbox v-model="isKeepPassword">记住密码</ElCheckbox>
+      <ElCheckbox v-model="isKeepPassword" @change="keepPasswordChange"
+        >记住密码</ElCheckbox
+      >
       <ElLink>忘记密码</ElLink>
     </div>
     <div class="login">

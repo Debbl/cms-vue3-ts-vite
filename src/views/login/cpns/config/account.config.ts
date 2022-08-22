@@ -2,7 +2,7 @@ import type { FormRules } from 'element-plus';
 
 // 用户名 密码 校验规则
 const rules: FormRules = {
-  username: [
+  name: [
     { required: true, message: '请输入用户名' },
     {
       pattern: /^[a-z0-9]{5,10}$/,

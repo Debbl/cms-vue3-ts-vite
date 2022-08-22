@@ -142,4 +142,4 @@ const About = () => import('@/views/About.vue');
 
 ## 4.1 登录
 
-- 登录验证
+- 登录验证，获取 token

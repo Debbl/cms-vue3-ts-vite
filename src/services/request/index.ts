@@ -4,6 +4,7 @@ import type { LoadingInstance } from 'element-plus/es/components/loading/src/loa
 import axios from 'axios';
 import { BASE_URL, TIMEOUT } from './config';
 import { ElLoading } from 'element-plus';
+import localCache from '@/utils/localCache';
 
 class DRequest {
   instance: AxiosInstance;
@@ -97,11 +98,11 @@ const dRequest = new DRequest({
   showLoading: false,
   interceptors: {
     requestInterceptor: (config) => {
-      const token = 'token--------';
+      const token = localCache.getCache('token');
       if (token) {
         config.headers = {
           ...config.headers,
-          Authorization: token,
+          Authorization: `Bearer ${token}`,
         };
       }
       return config;
