@@ -16,6 +16,7 @@ const useLoginStore = defineStore('login', {
   }),
   actions: {
     async accountLoginAction(account: IAccount) {
+      // token
       const loginResult = await accountLoginRequest(account);
       const { id, token } = loginResult.data;
       localCache.setCache('token', token);

@@ -7,7 +7,9 @@ class LocalCache {
     if (value) return JSON.parse(value);
   }
   removeCache(key: string) {
+    const value = localStorage.getItem(key);
     localStorage.removeItem(key);
+    return value;
   }
   clearCache() {
     localStorage.clear();
