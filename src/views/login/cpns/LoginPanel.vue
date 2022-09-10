@@ -46,39 +46,39 @@ const currentSelectedTab = ref('account');
 <template>
   <div class="login-panel">
     <h2 class="title">后台管理系统</h2>
-    <ElTabs
+    <el-tabs
       type="border-card"
       stretch
       @tab-change="tabClick"
       v-model="currentSelectedTab"
     >
-      <ElTabPane name="account">
+      <el-tab-pane name="account">
         <template #label>
           <span class="account">
-            <UserFilled style="width: 1em; height: 1em; margin-right: 8px" />
+            <user-filled style="width: 1em; height: 1em; margin-right: 8px" />
             <span>账号登录</span>
           </span>
         </template>
-        <LoginAccount ref="loginAccountRef" />
-      </ElTabPane>
-      <ElTabPane name="phone">
+        <login-account ref="loginAccountRef" />
+      </el-tab-pane>
+      <el-tab-pane name="phone">
         <template #label>
           <span class="phone">
-            <Iphone style="width: 1em; height: 1em; margin-right: 8px" />
+            <iphone style="width: 1em; height: 1em; margin-right: 8px" />
             <span>手机登录</span>
           </span>
         </template>
-        <LoginPhone />
-      </ElTabPane>
-    </ElTabs>
+        <login-phone />
+      </el-tab-pane>
+    </el-tabs>
     <div v-if="isShowAccountControl" class="account-control">
-      <ElCheckbox v-model="isKeepPassword" @change="keepPasswordChange"
-        >记住密码</ElCheckbox
+      <el-checkbox v-model="isKeepPassword" @change="keepPasswordChange"
+        >记住密码</el-checkbox
       >
-      <ElLink>忘记密码</ElLink>
+      <el-link>忘记密码</el-link>
     </div>
     <div class="login">
-      <ElButton type="primary" @click="loginClick">立即登录</ElButton>
+      <el-button type="primary" @click="loginClick">立即登录</el-button>
     </div>
   </div>
 </template>

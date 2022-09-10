@@ -4,7 +4,7 @@ import LoginPanel from './cpns/LoginPanel.vue';
 
 <template>
   <div class="login">
-    <LoginPanel />
+    <login-panel />
   </div>
 </template>
 

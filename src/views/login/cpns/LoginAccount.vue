@@ -37,18 +37,18 @@ defineExpose({
 
 <template>
   <div>
-    <ElForm
+    <el-form
       :rules="rules"
       :model="account"
       ref="accountFormRef"
       label-width="60px"
     >
-      <ElFormItem label="账号" prop="name">
-        <ElInput v-model="account.name" />
-      </ElFormItem>
-      <ElFormItem label="密码" prop="password">
-        <ElInput v-model="account.password" show-password />
-      </ElFormItem>
-    </ElForm>
+      <el-form-item label="账号" prop="name">
+        <el-input v-model="account.name" />
+      </el-form-item>
+      <el-form-item label="密码" prop="password">
+        <el-input v-model="account.password" show-password />
+      </el-form-item>
+    </el-form>
   </div>
 </template>

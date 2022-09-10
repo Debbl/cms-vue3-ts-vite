@@ -1,8 +1,14 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import useLoginStore from '@/stores/modules/login.store';
+
+const loginStore = useLoginStore();
+// 初始化用户登陆数据
+loginStore.setupLogin();
+</script>
 
 <template>
   <div class="app">
-    <RouterView />
+    <router-view />
   </div>
 </template>
 

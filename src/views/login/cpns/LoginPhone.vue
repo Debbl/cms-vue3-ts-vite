@@ -12,17 +12,17 @@ const account = reactive({
 
 <template>
   <div>
-    <ElForm :rules="rules" :model="account">
-      <ElFormItem label="手机号" prop="phoneNumber">
+    <el-form :rules="rules" :model="account">
+      <el-form-item label="手机号" prop="phoneNumber">
         <ElInput v-model="account.phoneNumber" />
-      </ElFormItem>
-      <ElFormItem label="验证码" prop="verifyCode">
+      </el-form-item>
+      <el-from-item label="验证码" prop="verifyCode">
         <div class="verify-code">
-          <ElInput v-model="account.verifyCode" type="password" />
-          <ElButton type="primary">获取验证码</ElButton>
+          <el-input v-model="account.verifyCode" type="password" />
+          <el-button type="primary">获取验证码</el-button>
         </div>
-      </ElFormItem>
-    </ElForm>
+      </el-from-item>
+    </el-form>
   </div>
 </template>
 

@@ -22,10 +22,10 @@ function userInfoByIdRequest(id: number) {
   });
 }
 
-function userMenusByRoleId(id: number) {
+function userMenusByRoleIdRequest(id: number) {
   return dRequest.get<IResponseData>({
     url: LoginAPI.UserMenus + '/' + id + '/menu',
   });
 }
 
-export { accountLoginRequest, userInfoByIdRequest, userMenusByRoleId };
+export { accountLoginRequest, userInfoByIdRequest, userMenusByRoleIdRequest };
