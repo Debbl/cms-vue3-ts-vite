@@ -4,7 +4,7 @@ const Menu = () => import('@/views/main/system/menu/Menu.vue');
 
 const menuRoute: RouteRecordRaw = {
   name: 'menu',
-  path: 'main/system/menu',
+  path: '/main/system/menu',
   component: Menu,
 };
 

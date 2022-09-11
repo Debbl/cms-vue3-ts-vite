@@ -4,7 +4,7 @@ const List = () => import('@/views/main/story/list/List.vue');
 
 const listRoute: RouteRecordRaw = {
   name: 'list',
-  path: 'main/story/list',
+  path: '/main/story/list',
   component: List,
 };
 

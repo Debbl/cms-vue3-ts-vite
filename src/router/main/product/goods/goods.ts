@@ -4,7 +4,7 @@ const Goods = () => import('@/views/main/product/goods/Goods.vue');
 
 const goodsRoute: RouteRecordRaw = {
   name: 'goods',
-  path: 'main/product/goods',
+  path: '/main/product/goods',
   component: Goods,
 };
 

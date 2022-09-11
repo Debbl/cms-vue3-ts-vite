@@ -4,7 +4,7 @@ const OverView = () => import('@/views/main/analysis/overview/Overview.vue');
 
 const overviewRoute: RouteRecordRaw = {
   name: 'overview',
-  path: 'main/analysis/overview',
+  path: '/main/analysis/overview',
   component: OverView,
 };
 

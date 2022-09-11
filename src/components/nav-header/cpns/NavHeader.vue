@@ -19,6 +19,10 @@ const handelFoldClick = () => {
     <el-icon class="fold-icon" @click="handelFoldClick">
       <component :is="isFold ? Expand : Fold"></component>
     </el-icon>
+    <div class="content">
+      <div>面包屑</div>
+      <div>用户信息</div>
+    </div>
   </div>
 </template>
 
@@ -36,6 +40,13 @@ const handelFoldClick = () => {
       width: 100%;
       height: 100%;
     }
+  }
+  .content {
+    flex: 1;
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 </style>

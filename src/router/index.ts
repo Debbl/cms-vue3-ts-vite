@@ -4,6 +4,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 const Login = () => import('@/views/login/Login.vue');
 const Main = () => import('@/views/main/Main.vue');
+const NotFound = () => import('@/views/not-found/NotFound.vue');
 
 const routes: RouteRecordRaw[] = [
   {
@@ -11,12 +12,19 @@ const routes: RouteRecordRaw[] = [
     redirect: '/main',
   },
   {
+    name: 'login',
     path: '/login',
     component: Login,
   },
   {
+    name: 'main',
     path: '/main',
     component: Main,
+    children: [],
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    component: NotFound,
   },
 ];
 

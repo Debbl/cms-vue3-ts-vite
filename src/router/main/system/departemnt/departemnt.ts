@@ -5,7 +5,7 @@ const Department = () =>
 
 const departmentRoute: RouteRecordRaw = {
   name: 'department',
-  path: 'main/system/department',
+  path: '/main/system/department',
   component: Department,
 };
 

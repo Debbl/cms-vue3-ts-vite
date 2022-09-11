@@ -38,7 +38,7 @@ const props = defineProps({
       <img src="~@/assets/img/logo.svg" alt="" />
       <span v-if="!props.isCollapse" class="title">Vue3+TS</span>
     </div>
-    <el-menu class="el-menu-vertical" :collapse="props.isCollapse">
+    <el-menu class="el-menu-vertical" :collapse="props.isCollapse" router>
       <template v-for="item in userMenus" :key="item.id">
         <template v-if="item.type === 1">
           <el-sub-menu :index="item.id + ''">

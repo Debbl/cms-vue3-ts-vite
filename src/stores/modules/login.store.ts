@@ -43,10 +43,10 @@ const useLoginStore = defineStore('login', {
       const userMenusResult = await userMenusByRoleIdRequest(userInfo.role.id);
       const userMenus = userMenusResult.data;
       this.userMenus = userMenus;
-      localCache.setCache('userMenus', userMenus);
       // 登录成功跳转
       router.push('/main');
     },
+    // 添加 routes 到 main 的 children
   },
 });
 
