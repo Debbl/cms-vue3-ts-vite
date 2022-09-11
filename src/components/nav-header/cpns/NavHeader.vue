@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import { ElIcon } from 'element-plus';
 import { Expand, Fold } from '@element-plus/icons-vue';
+import UserInfo from './UserInfo.vue';
 
 // 折叠菜单
 const emit = defineEmits<{
@@ -21,7 +22,7 @@ const handelFoldClick = () => {
     </el-icon>
     <div class="content">
       <div>面包屑</div>
-      <div>用户信息</div>
+      <div><user-info /></div>
     </div>
   </div>
 </template>
