@@ -10,7 +10,7 @@ export type UserMenu = {
 
 export type UserMenuChildren = {
   id: number;
-  url: string | null;
+  url: string;
   name: string;
   icon: string;
   sort: number | null;

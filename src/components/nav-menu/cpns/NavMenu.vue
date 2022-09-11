@@ -49,7 +49,7 @@ const props = defineProps({
               <span>{{ item.name }}</span>
             </template>
             <template v-for="subitem in item.children" :key="subitem.id">
-              <el-menu-item :index="subitem.id + ''">
+              <el-menu-item :index="subitem.id + ''" :route="subitem.url">
                 <i v-if="subitem.icon" :class="subitem.icon" />
                 <span>{{ subitem.name }}</span>
               </el-menu-item>
@@ -57,7 +57,7 @@ const props = defineProps({
           </el-sub-menu>
         </template>
         <template v-else-if="item.type === 2">
-          <el-menu-item :index="item.id + ''">
+          <el-menu-item :index="item.id + ''" :route="item.url">
             <i v-if="item.icon" :class="item.icon" />
             <span>{{ item.name }}</span>
           </el-menu-item>
@@ -91,6 +91,7 @@ const props = defineProps({
     width: 100%;
     border: none;
     background-color: #001529;
+    transition-duration: 0s;
     .el-sub-menu {
       :deep(.el-sub-menu__title) {
         color: #fff;
@@ -99,12 +100,13 @@ const props = defineProps({
         background-color: #001530;
       }
       background-color: #001529;
-      .el-menu-item {
-        background-color: #0c2135;
-        span {
-          color: #fff;
-        }
-      }
+    }
+    .el-menu-item {
+      background-color: #0c2135;
+      color: #fff;
+    }
+    .el-menu-item.is-active {
+      background-color: #2a5fb6;
     }
   }
 }
