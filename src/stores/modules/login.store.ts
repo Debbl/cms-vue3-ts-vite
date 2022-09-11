@@ -1,4 +1,5 @@
 import type { IAccount } from '@/services/modules/type';
+import type { UserMenu } from './type';
 import {
   accountLoginRequest,
   userInfoByIdRequest,
@@ -7,27 +8,6 @@ import {
 import { defineStore } from 'pinia';
 import localCache from '@/utils/localCache';
 import router from '@/router';
-
-type UserMenu = {
-  id: number;
-  name: string;
-  type: number;
-  url: string;
-  icon: string;
-  sort: number;
-  children: UserMenuChildren[];
-};
-
-type UserMenuChildren = {
-  id: number;
-  url: string | null;
-  name: string;
-  icon: string;
-  sort: number | null;
-  type: number;
-  parentId: number;
-  permission: string;
-};
 
 const useLoginStore = defineStore('login', {
   state: (): {

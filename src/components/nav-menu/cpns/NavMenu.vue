@@ -1,24 +1,51 @@
 <script lang="ts" setup>
-import { ElMenu, ElSubMenu, ElMenuItem } from 'element-plus';
-import useLoginStore from '@/stores/modules/login.store';
 import { storeToRefs } from 'pinia';
+import { ElMenu, ElSubMenu, ElMenuItem, ElIcon } from 'element-plus';
+import {
+  ChatLineRound,
+  Goods,
+  Monitor,
+  Setting,
+} from '@element-plus/icons-vue';
+import useLoginStore from '@/stores/modules/login.store';
 
 const loginStore = useLoginStore();
 const { userMenus } = storeToRefs(loginStore);
+
+// 获取图标
+const getIconCpn = (icon: string) => {
+  const cpn = icon.slice(8);
+  switch (cpn) {
+    case 'monitor':
+      return Monitor;
+    case 'setting':
+      return Setting;
+    case 'goods':
+      return Goods;
+    case 'chat-line-round':
+      return ChatLineRound;
+  }
+};
+
+const props = defineProps({
+  isCollapse: Boolean,
+});
 </script>
 
 <template>
   <div class="nav-menu">
     <div class="logo">
       <img src="~@/assets/img/logo.svg" alt="" />
-      <span class="title">Vue3+TS</span>
+      <span v-if="!props.isCollapse" class="title">Vue3+TS</span>
     </div>
-    <el-menu class="el-menu-vertical-demo">
+    <el-menu class="el-menu-vertical" :collapse="props.isCollapse">
       <template v-for="item in userMenus" :key="item.id">
         <template v-if="item.type === 1">
           <el-sub-menu :index="item.id + ''">
             <template #title>
-              <i v-if="item.icon" :class="item.icon"></i>
+              <el-icon v-if="item.icon">
+                <component :is="getIconCpn(item.icon)" />
+              </el-icon>
               <span>{{ item.name }}</span>
             </template>
             <template v-for="subitem in item.children" :key="subitem.id">
@@ -41,6 +68,9 @@ const { userMenus } = storeToRefs(loginStore);
 </template>
 <style lang="less" scoped>
 .nav-menu {
+  background-color: #001529;
+  overflow: hidden;
+  width: 100%;
   .logo {
     display: flex;
     height: 28px;
@@ -55,6 +85,26 @@ const { userMenus } = storeToRefs(loginStore);
       font-size: 16px;
       font-weight: 700;
       color: #fff;
+    }
+  }
+  .el-menu {
+    width: 100%;
+    border: none;
+    background-color: #001529;
+    .el-sub-menu {
+      :deep(.el-sub-menu__title) {
+        color: #fff;
+      }
+      :deep(.el-sub-menu__title:hover) {
+        background-color: #001530;
+      }
+      background-color: #001529;
+      .el-menu-item {
+        background-color: #0c2135;
+        span {
+          color: #fff;
+        }
+      }
     }
   }
 }
