@@ -1,30 +1,31 @@
 <script lang="ts" setup>
 import {
-  ElIcon,
-  ElDropdownMenu,
   ElDropdown,
   ElDropdownItem,
-} from 'element-plus';
-import { ArrowDown } from '@element-plus/icons-vue';
+  ElDropdownMenu,
+  ElIcon,
+} from "element-plus";
+import { ArrowDown } from "@element-plus/icons-vue";
 </script>
+
 <template>
   <div>
-    <el-dropdown>
+    <ElDropdown>
       <span class="el-dropdown-link">
         Dropdown List
-        <el-icon class="el-icon--right">
-          <arrow-down />
-        </el-icon>
+        <ElIcon class="el-icon--right">
+          <ArrowDown />
+        </ElIcon>
       </span>
       <template #dropdown>
-        <el-dropdown-menu>
-          <el-dropdown-item>Action 1</el-dropdown-item>
-          <el-dropdown-item>Action 2</el-dropdown-item>
-          <el-dropdown-item>Action 3</el-dropdown-item>
-          <el-dropdown-item disabled>Action 4</el-dropdown-item>
-          <el-dropdown-item divided>Action 5</el-dropdown-item>
-        </el-dropdown-menu>
+        <ElDropdownMenu>
+          <ElDropdownItem>Action 1</ElDropdownItem>
+          <ElDropdownItem>Action 2</ElDropdownItem>
+          <ElDropdownItem>Action 3</ElDropdownItem>
+          <ElDropdownItem disabled>Action 4</ElDropdownItem>
+          <ElDropdownItem divided>Action 5</ElDropdownItem>
+        </ElDropdownMenu>
       </template>
-    </el-dropdown>
+    </ElDropdown>
   </div>
 </template>

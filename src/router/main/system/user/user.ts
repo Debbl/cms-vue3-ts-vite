@@ -1,10 +1,10 @@
-import { RouteRecordRaw } from 'vue-router';
+import type { RouteRecordRaw } from "vue-router";
 
-const User = () => import('@/views/main/system/user/User.vue');
+const User = () => import("@/views/main/system/user/User.vue");
 
 const userRoute: RouteRecordRaw = {
-  name: 'user',
-  path: '/main/system/user',
+  name: "user",
+  path: "/main/system/user",
   component: User,
 };
 

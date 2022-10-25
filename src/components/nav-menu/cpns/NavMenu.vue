@@ -1,14 +1,17 @@
 <script lang="ts" setup>
-import { storeToRefs } from 'pinia';
-import { ElMenu, ElSubMenu, ElMenuItem, ElIcon } from 'element-plus';
+import { storeToRefs } from "pinia";
+import { ElIcon, ElMenu, ElMenuItem, ElSubMenu } from "element-plus";
 import {
   ChatLineRound,
   Goods,
   Monitor,
   Setting,
-} from '@element-plus/icons-vue';
-import useLoginStore from '@/stores/modules/login.store';
+} from "@element-plus/icons-vue";
+import useLoginStore from "@/stores/modules/login.store";
 
+const props = defineProps({
+  isCollapse: Boolean,
+});
 const loginStore = useLoginStore();
 const { userMenus } = storeToRefs(loginStore);
 
@@ -16,20 +19,16 @@ const { userMenus } = storeToRefs(loginStore);
 const getIconCpn = (icon: string) => {
   const cpn = icon.slice(8);
   switch (cpn) {
-    case 'monitor':
+    case "monitor":
       return Monitor;
-    case 'setting':
+    case "setting":
       return Setting;
-    case 'goods':
+    case "goods":
       return Goods;
-    case 'chat-line-round':
+    case "chat-line-round":
       return ChatLineRound;
   }
 };
-
-const props = defineProps({
-  isCollapse: Boolean,
-});
 </script>
 
 <template>
@@ -38,34 +37,35 @@ const props = defineProps({
       <img src="~@/assets/img/logo.svg" alt="" />
       <span v-if="!props.isCollapse" class="title">Vue3+TS</span>
     </div>
-    <el-menu class="el-menu-vertical" :collapse="props.isCollapse" router>
+    <ElMenu class="el-menu-vertical" :collapse="props.isCollapse" router>
       <template v-for="item in userMenus" :key="item.id">
         <template v-if="item.type === 1">
-          <el-sub-menu :index="item.id + ''">
+          <ElSubMenu :index="`${item.id}`">
             <template #title>
-              <el-icon v-if="item.icon">
+              <ElIcon v-if="item.icon">
                 <component :is="getIconCpn(item.icon)" />
-              </el-icon>
+              </ElIcon>
               <span>{{ item.name }}</span>
             </template>
             <template v-for="subitem in item.children" :key="subitem.id">
-              <el-menu-item :index="subitem.id + ''" :route="subitem.url">
+              <ElMenuItem :index="`${subitem.id}`" :route="subitem.url">
                 <i v-if="subitem.icon" :class="subitem.icon" />
                 <span>{{ subitem.name }}</span>
-              </el-menu-item>
+              </ElMenuItem>
             </template>
-          </el-sub-menu>
+          </ElSubMenu>
         </template>
         <template v-else-if="item.type === 2">
-          <el-menu-item :index="item.id + ''" :route="item.url">
+          <ElMenuItem :index="`${item.id}`" :route="item.url">
             <i v-if="item.icon" :class="item.icon" />
             <span>{{ item.name }}</span>
-          </el-menu-item>
+          </ElMenuItem>
         </template>
       </template>
-    </el-menu>
+    </ElMenu>
   </div>
 </template>
+
 <style lang="less" scoped>
 .nav-menu {
   background-color: #001529;

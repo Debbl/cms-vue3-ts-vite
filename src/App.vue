@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import useLoginStore from '@/stores/modules/login.store';
-import { useRouter } from 'vue-router';
-import { mapMenusToRoutes } from './utils/mapMenus';
+import { useRouter } from "vue-router";
+import { mapMenusToRoutes } from "./utils/mapMenus";
+import useLoginStore from "@/stores/modules/login.store";
 
 const router = useRouter();
 const loginStore = useLoginStore();
@@ -10,7 +10,7 @@ loginStore.setupLogin();
 // 初始化动态路由
 const routes = mapMenusToRoutes(loginStore.userMenus);
 routes.forEach((route) => {
-  router.addRoute('main', route);
+  router.addRoute("main", route);
 });
 </script>
 

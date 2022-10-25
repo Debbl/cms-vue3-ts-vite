@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import LoginPanel from './cpns/LoginPanel.vue';
+import LoginPanel from "./cpns/LoginPanel.vue";
 </script>
 
 <template>
   <div class="login">
-    <login-panel />
+    <LoginPanel />
   </div>
 </template>
 

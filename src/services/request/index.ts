@@ -1,10 +1,10 @@
-import type { AxiosInstance } from 'axios';
-import type { DAxiosRequestConfig, DRequestInterceptors } from './type';
-import type { LoadingInstance } from 'element-plus/es/components/loading/src/loading';
-import axios from 'axios';
-import { BASE_URL, TIMEOUT } from './config';
-import { ElLoading } from 'element-plus';
-import localCache from '@/utils/localCache';
+import type { AxiosInstance } from "axios";
+import type { LoadingInstance } from "element-plus/es/components/loading/src/loading";
+import axios from "axios";
+import { ElLoading } from "element-plus";
+import { BASE_URL, TIMEOUT } from "./config";
+import type { DAxiosRequestConfig, DRequestInterceptors } from "./type";
+import localCache from "@/utils/localCache";
 
 class DRequest {
   instance: AxiosInstance;
@@ -21,8 +21,8 @@ class DRequest {
           this.loading = ElLoading.service({
             fullscreen: true,
             lock: true,
-            text: '加载中...',
-            background: 'rgba(0, 0, 0, .5)',
+            text: "加载中...",
+            background: "rgba(0, 0, 0, .5)",
           });
         }
         return requestConfig;
@@ -51,6 +51,7 @@ class DRequest {
       config?.interceptors?.responseINterceptorCatch
     );
   }
+
   request<T>(config: DAxiosRequestConfig): Promise<T> {
     if (config.interceptors?.requestInterceptor) {
       config = config.interceptors.requestInterceptor(config);
@@ -60,8 +61,8 @@ class DRequest {
       loading = ElLoading.service({
         fullscreen: true,
         lock: true,
-        text: '加载中...',
-        background: 'rgba(0, 0, 0, .5)',
+        text: "加载中...",
+        background: "rgba(0, 0, 0, .5)",
       });
     }
     return new Promise((resolve, reject) => {
@@ -81,14 +82,17 @@ class DRequest {
         });
     });
   }
+
   get<T>(config: DAxiosRequestConfig) {
-    return this.request<T>({ ...config, method: 'GET' });
+    return this.request<T>({ ...config, method: "GET" });
   }
+
   post<T>(config: DAxiosRequestConfig) {
-    return this.request<T>({ ...config, method: 'POST' });
+    return this.request<T>({ ...config, method: "POST" });
   }
+
   delete<T>(config: DAxiosRequestConfig) {
-    return this.request<T>({ ...config, method: 'DELETE' });
+    return this.request<T>({ ...config, method: "DELETE" });
   }
 }
 
@@ -98,7 +102,7 @@ const dRequest = new DRequest({
   showLoading: false,
   interceptors: {
     requestInterceptor: (config) => {
-      const token = localCache.getCache('token');
+      const token = localCache.getCache("token");
       if (token) {
         config.headers = {
           ...config.headers,

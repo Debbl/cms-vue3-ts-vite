@@ -1,11 +1,11 @@
-import type { IResponseData } from '../type';
-import type { IAccount, ILoginResult } from './type';
-import { dRequest } from '../index';
+import type { IResponseData } from "../type";
+import { dRequest } from "../index";
+import type { IAccount, ILoginResult } from "./type";
 
 enum LoginAPI {
-  AccountLogin = '/login',
-  LoginUserInfo = '/users',
-  UserMenus = '/role',
+  AccountLogin = "/login",
+  LoginUserInfo = "/users",
+  UserMenus = "/role",
 }
 
 function accountLoginRequest(account: IAccount) {
@@ -18,13 +18,13 @@ function accountLoginRequest(account: IAccount) {
 
 function userInfoByIdRequest(id: number) {
   return dRequest.get<IResponseData>({
-    url: LoginAPI.LoginUserInfo + '/' + id,
+    url: `${LoginAPI.LoginUserInfo}/${id}`,
   });
 }
 
 function userMenusByRoleIdRequest(id: number) {
   return dRequest.get<IResponseData>({
-    url: LoginAPI.UserMenus + '/' + id + '/menu',
+    url: `${LoginAPI.UserMenus}/${id}/menu`,
   });
 }
 

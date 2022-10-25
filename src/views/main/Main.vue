@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { ElContainer, ElAside, ElHeader, ElMain } from 'element-plus';
-import { NavMenu } from '@/components/nav-menu';
-import NavHeader from '@/components/nav-header/cpns/NavHeader.vue';
-import { ref } from 'vue';
+import { ElAside, ElContainer, ElHeader, ElMain } from "element-plus";
+import { ref } from "vue";
+import { NavMenu } from "@/components/nav-menu";
+import NavHeader from "@/components/nav-header/cpns/NavHeader.vue";
 
 // 折叠菜单
 const isCollapse = ref(false);
@@ -13,19 +13,19 @@ const handelFoldChange = (isFold: boolean) => {
 
 <template>
   <div class="main">
-    <el-container class="main-container">
-      <el-aside :width="isCollapse ? '64px' : '220px'"
-        ><nav-menu :isCollapse="isCollapse"
-      /></el-aside>
-      <el-container class="main-right">
-        <el-header>
-          <nav-header @foldChange="handelFoldChange" />
-        </el-header>
-        <el-main>
+    <ElContainer class="main-container">
+      <ElAside :width="isCollapse ? '64px' : '220px'"
+        ><NavMenu :isCollapse="isCollapse"
+      /></ElAside>
+      <ElContainer class="main-right">
+        <ElHeader>
+          <NavHeader @foldChange="handelFoldChange" />
+        </ElHeader>
+        <ElMain>
           <router-view />
-        </el-main>
-      </el-container>
-    </el-container>
+        </ElMain>
+      </ElContainer>
+    </ElContainer>
   </div>
 </template>
 

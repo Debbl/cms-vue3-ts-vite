@@ -1,10 +1,10 @@
-import { RouteRecordRaw } from 'vue-router';
+import type { RouteRecordRaw } from "vue-router";
 
-const Chat = () => import('@/views/main/story/chat/Chat.vue');
+const Chat = () => import("@/views/main/story/chat/Chat.vue");
 
 const chatRoute: RouteRecordRaw = {
-  name: 'chat',
-  path: '/main/story/chat',
+  name: "chat",
+  path: "/main/story/chat",
   component: Chat,
 };
 

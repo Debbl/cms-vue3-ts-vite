@@ -1,3 +1,3 @@
-import NavHeader from './cpns/NavHeader.vue';
+import NavHeader from "./cpns/NavHeader.vue";
 
 export { NavHeader };

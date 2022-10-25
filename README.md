@@ -4,23 +4,27 @@
 
 - vue+ts
 
-## 1.2 不同IDE同步代码风格 `.editorconfig`
+## 1.2 不同 IDE 同步代码风格 `.editorconfig`
 
 ```yaml
 # EditorConfig is awesome: https://EditorConfig.org
 
 # top-most EditorConfig file
+
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
 root = true
 
-[*] # 表示所有文件适用
-charset = utf-8 # 设置文件字符集为 utf-8
-indent_style = space # 缩进风格（tab | space）
-indent_size = 2 # 缩进大小
-end_of_line = lf # 控制换行类型(lf | cr | crlf)
-trim_trailing_whitespace = true # 去除行首的任意空白字符
-insert_final_newline = true # 始终在文件末尾插入一个新行
+[*] 
+charset = utf-8
+indent_style = space
+indent_size = 2
+end_of_line = lf 
+trim_trailing_whitespace = true
+insert_final_newline = true 
 
-[*.md] # 表示仅 md 文件适用以下规则
+[*.md] 
 max_line_length = off
 trim_trailing_whitespace = false
 ```
@@ -62,21 +66,21 @@ module.exports = {
     node: true,
   },
   extends: [
-    'eslint:recommended',
-    'plugin:vue/vue3-essential',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
+    "eslint:recommended",
+    "plugin:vue/vue3-essential",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
   ],
   overrides: [],
-  parser: 'vue-eslint-parser',
+  parser: "vue-eslint-parser",
   parserOptions: {
-    ecmaVersion: 'latest',
-    parser: '@typescript-eslint/parser',
-    sourceType: 'module',
+    ecmaVersion: "latest",
+    parser: "@typescript-eslint/parser",
+    sourceType: "module",
   },
-  plugins: ['vue', '@typescript-eslint'],
+  plugins: ["vue", "@typescript-eslint"],
   rules: {
-    'prettier/prettier': 'warn',
+    "prettier/prettier": "warn",
   },
 };
 ```
@@ -86,9 +90,9 @@ module.exports = {
 - `pnpm i vite-plugin-eslint -D`
 
 ```ts
-import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue';
-import eslint from 'vite-plugin-eslint';
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import eslint from "vite-plugin-eslint";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -105,8 +109,8 @@ export default defineConfig({
 - 按组件分块（动态加载组件）
 
 ```js
-const Home = () => import('@/views/Home.vue');
-const About = () => import('@/views/About.vue');
+const Home = () => import("@/views/Home.vue");
+const About = () => import("@/views/About.vue");
 ```
 
 ## 2.1 pinia

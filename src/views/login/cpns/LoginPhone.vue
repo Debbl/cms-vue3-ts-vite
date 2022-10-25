@@ -1,28 +1,28 @@
 <script lang="ts" setup>
-import { reactive } from 'vue';
-import { ElForm, ElFormItem, ElInput, ElButton } from 'element-plus';
-import { rules } from './config/phone.config';
+import { reactive } from "vue";
+import { ElButton, ElForm, ElFormItem, ElInput } from "element-plus";
+import { rules } from "./config/phone.config";
 
 // 手机号
 const account = reactive({
-  phoneNumber: '',
-  verifyCode: '',
+  phoneNumber: "",
+  verifyCode: "",
 });
 </script>
 
 <template>
   <div>
-    <el-form :rules="rules" :model="account">
-      <el-form-item label="手机号" prop="phoneNumber">
+    <ElForm :rules="rules" :model="account">
+      <ElFormItem label="手机号" prop="phoneNumber">
         <ElInput v-model="account.phoneNumber" />
-      </el-form-item>
+      </ElFormItem>
       <el-from-item label="验证码" prop="verifyCode">
         <div class="verify-code">
-          <el-input v-model="account.verifyCode" type="password" />
-          <el-button type="primary">获取验证码</el-button>
+          <ElInput v-model="account.verifyCode" type="password" />
+          <ElButton type="primary">获取验证码</ElButton>
         </div>
       </el-from-item>
-    </el-form>
+    </ElForm>
   </div>
 </template>
 
