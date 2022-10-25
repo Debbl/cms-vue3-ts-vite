@@ -1,6 +1,6 @@
 import type { RouteRecordRaw } from "vue-router";
 
-const List = () => import("@/views/main/story/list/List.vue");
+const List = () => import("~/views/main/story/list/List.vue");
 
 const listRoute: RouteRecordRaw = {
   name: "list",

@@ -2,8 +2,8 @@
 import { reactive, ref } from "vue";
 import { ElForm, ElFormItem, ElInput } from "element-plus";
 import { rules } from "./config/account.config";
-import localCache from "@/utils/localCache";
-import useLoginStore from "@/stores/modules/login.store";
+import localCache from "~/utils/localCache";
+import useLoginStore from "~/stores/modules/login.store";
 
 // 用户名 密码
 const account = reactive({

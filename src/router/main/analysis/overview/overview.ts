@@ -1,6 +1,6 @@
 import type { RouteRecordRaw } from "vue-router";
 
-const OverView = () => import("@/views/main/analysis/overview/Overview.vue");
+const OverView = () => import("~/views/main/analysis/overview/Overview.vue");
 
 const overviewRoute: RouteRecordRaw = {
   name: "overview",

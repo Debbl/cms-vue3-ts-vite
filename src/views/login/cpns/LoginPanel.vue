@@ -5,7 +5,7 @@ import { ElButton, ElCheckbox, ElLink, ElTabPane, ElTabs } from "element-plus";
 import { Iphone, UserFilled } from "@element-plus/icons-vue";
 import LoginAccount from "./LoginAccount.vue";
 import LoginPhone from "./LoginPhone.vue";
-import localCache from "@/utils/localCache";
+import localCache from "~/utils/localCache";
 
 const isKeepPassword = ref(localCache.getCache("isKeepPassword"));
 const isShowAccountControl = ref(true);

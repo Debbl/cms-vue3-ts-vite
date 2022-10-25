@@ -1,6 +1,6 @@
 import type { RouteRecordRaw } from "vue-router";
 
-const Dashboard = () => import("@/views/main/analysis/dashboard/Dashboard.vue");
+const Dashboard = () => import("~/views/main/analysis/dashboard/Dashboard.vue");
 
 const dashboardRoute: RouteRecordRaw = {
   name: "dashboard",

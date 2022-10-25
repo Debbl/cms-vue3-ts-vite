@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useRouter } from "vue-router";
 import { mapMenusToRoutes } from "./utils/mapMenus";
-import useLoginStore from "@/stores/modules/login.store";
+import useLoginStore from "~/stores/modules/login.store";
 
 const router = useRouter();
 const loginStore = useLoginStore();

@@ -1,10 +1,10 @@
 import type { RouteRecordRaw } from "vue-router";
 import { createRouter, createWebHistory } from "vue-router";
-import localCache from "@/utils/localCache";
+import localCache from "~/utils/localCache";
 
-const Login = () => import("@/views/login/Login.vue");
-const Main = () => import("@/views/main/Main.vue");
-const NotFound = () => import("@/views/not-found/NotFound.vue");
+const Login = () => import("~/views/login/Login.vue");
+const Main = () => import("~/views/main/Main.vue");
+const NotFound = () => import("~/views/not-found/NotFound.vue");
 
 const routes: RouteRecordRaw[] = [
   {

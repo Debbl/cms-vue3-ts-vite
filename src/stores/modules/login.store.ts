@@ -1,13 +1,13 @@
 import { defineStore } from "pinia";
 import type { UserMenu } from "./type";
-import type { IAccount } from "@/services/modules/type";
+import type { IAccount } from "~/services/modules/type";
 import {
   accountLoginRequest,
   userInfoByIdRequest,
   userMenusByRoleIdRequest,
-} from "@/services/modules/login.service";
-import localCache from "@/utils/localCache";
-import router from "@/router";
+} from "~/services/modules/login.service";
+import localCache from "~/utils/localCache";
+import router from "~/router";
 
 const useLoginStore = defineStore("login", {
   state: (): {
