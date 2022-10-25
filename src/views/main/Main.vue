@@ -22,7 +22,7 @@ const handelFoldChange = (isFold: boolean) => {
           <NavHeader @foldChange="handelFoldChange" />
         </ElHeader>
         <ElMain>
-          <router-view />
+          <RouterView />
         </ElMain>
       </ElContainer>
     </ElContainer>

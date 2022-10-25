@@ -16,7 +16,7 @@ routes.forEach((route) => {
 
 <template>
   <div class="app">
-    <router-view />
+    <RouterView />
   </div>
 </template>
 
