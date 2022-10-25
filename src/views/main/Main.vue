@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { ElAside, ElContainer, ElHeader, ElMain } from "element-plus";
 import { ref } from "vue";
-import { NavMenu } from "@/components/nav-menu";
-import NavHeader from "@/components/nav-header/cpns/NavHeader.vue";
+import { NavMenu } from "~/components/nav-menu";
+import NavHeader from "~/components/nav-header/cpns/NavHeader.vue";
 
 // 折叠菜单
 const isCollapse = ref(false);

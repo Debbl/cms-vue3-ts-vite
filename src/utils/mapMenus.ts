@@ -1,5 +1,5 @@
 import type { RouteRecordRaw } from "vue-router";
-import type { UserMenu } from "@/stores/modules/type";
+import type { UserMenu } from "~/stores/modules/type";
 
 function mapMenusToRoutes(userMenus: UserMenu[]): RouteRecordRaw[] {
   const routes: RouteRecordRaw[] = [];

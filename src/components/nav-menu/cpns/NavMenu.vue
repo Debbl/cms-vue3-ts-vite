@@ -7,7 +7,7 @@ import {
   Monitor,
   Setting,
 } from "@element-plus/icons-vue";
-import useLoginStore from "@/stores/modules/login.store";
+import useLoginStore from "~/stores/modules/login.store";
 
 const props = defineProps({
   isCollapse: Boolean,
@@ -34,7 +34,7 @@ const getIconCpn = (icon: string) => {
 <template>
   <div class="nav-menu">
     <div class="logo">
-      <img src="~@/assets/img/logo.svg" alt="" />
+      <img src="~~/assets/img/logo.svg" alt="" />
       <span v-if="!props.isCollapse" class="title">Vue3+TS</span>
     </div>
     <ElMenu class="el-menu-vertical" :collapse="props.isCollapse" router>
