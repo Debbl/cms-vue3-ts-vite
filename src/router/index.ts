@@ -34,10 +34,12 @@ const router = createRouter({
 });
 
 router.beforeEach((to) => {
-  if (to.path !== "/login") {
-    if (!localCache.getCache("token")) {
-      return "/login";
-    }
+  const token = localCache.getCache("token");
+  if (to.path === "/login" && token) {
+    return "/main";
+  }
+  if (to.path !== "/login" && !token) {
+    return "/login";
   }
 });
 
