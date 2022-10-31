@@ -7,7 +7,7 @@ import LoginAccount from "./LoginAccount.vue";
 import LoginPhone from "./LoginPhone.vue";
 import localCache from "~/utils/localCache";
 
-const isKeepPassword = ref(localCache.getCache("isKeepPassword"));
+const isKeepPassword = ref(localCache.getCache("isKeepPassword") || false);
 const isShowAccountControl = ref(true);
 const tabClick = (name: TabPanelName) => {
   switch (name) {
@@ -36,8 +36,7 @@ const loginClick = () => {
 };
 // 记住密码
 const keepPasswordChange = (val: CheckboxValueType) => {
-  localCache.setCache("isKeepPassword", val);
-  console.log(val);
+  localCache.setCache("isKeepPassword", val as boolean);
 };
 </script>
 

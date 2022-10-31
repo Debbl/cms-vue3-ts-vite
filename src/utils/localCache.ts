@@ -23,6 +23,7 @@ export default new LocalCache<{
   token: string;
   name: string;
   password: string;
+  isKeepPassword: boolean;
   userInfo: any;
   userMenus: any;
 }>();
