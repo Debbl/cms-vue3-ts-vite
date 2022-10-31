@@ -11,10 +11,10 @@ const isKeepPassword = ref(localCache.getCache("isKeepPassword") || false);
 const isShowAccountControl = ref(true);
 const tabClick = (name: TabPanelName) => {
   switch (name) {
-    case "0":
+    case "account":
       isShowAccountControl.value = true;
       break;
-    case "1":
+    case "phone":
       isShowAccountControl.value = false;
       break;
     default:
