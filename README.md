@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="src/assets/img/logo.svg" width="100">
+</p>
+
 # 1. 项目搭建
 
 ## 1.1 使用`create-vite` 创建项目
@@ -16,15 +20,15 @@
 # top-most EditorConfig file
 root = true
 
-[*] 
+[*]
 charset = utf-8
 indent_style = space
 indent_size = 2
-end_of_line = lf 
+end_of_line = lf
 trim_trailing_whitespace = true
-insert_final_newline = true 
+insert_final_newline = true
 
-[*.md] 
+[*.md]
 max_line_length = off
 trim_trailing_whitespace = false
 ```
@@ -47,7 +51,7 @@ module.exports = {
   tabWidth: 2, // tab 的宽度
   printWidth: 80, // 每行的最大字符数
   singleQuote: true, // 单引号
-  trailingComma: 'es5', // 末尾是否有逗号
+  trailingComma: "es5", // 末尾是否有逗号
   semi: true, // 是否使用分号
 };
 ```
