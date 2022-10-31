@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/61053131/199010486-75666ad3-556a-4650-bacb-180ae97841d9.svg">
+  <img src="./public/logo.svg" width="100">
 </p>
 
 # 1. 项目搭建
