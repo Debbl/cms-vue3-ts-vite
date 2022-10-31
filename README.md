@@ -1,3 +1,13 @@
+<div>
+  <p align="center">
+    <svg align="center" xmlns="http://www.w3.org/2000/svg" width="100px" height="100px" preserveAspectRatio="xMidYMid meet"
+      viewBox="0 0 16 16">
+    <path fill="#3267a5"
+        d="M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2z" />
+    </svg>
+  </p>
+</div>
+
 # 1. 项目搭建
 
 ## 1.1 使用`create-vite` 创建项目
@@ -16,15 +26,15 @@
 # top-most EditorConfig file
 root = true
 
-[*] 
+[*]
 charset = utf-8
 indent_style = space
 indent_size = 2
-end_of_line = lf 
+end_of_line = lf
 trim_trailing_whitespace = true
-insert_final_newline = true 
+insert_final_newline = true
 
-[*.md] 
+[*.md]
 max_line_length = off
 trim_trailing_whitespace = false
 ```
@@ -47,7 +57,7 @@ module.exports = {
   tabWidth: 2, // tab 的宽度
   printWidth: 80, // 每行的最大字符数
   singleQuote: true, // 单引号
-  trailingComma: 'es5', // 末尾是否有逗号
+  trailingComma: "es5", // 末尾是否有逗号
   semi: true, // 是否使用分号
 };
 ```
