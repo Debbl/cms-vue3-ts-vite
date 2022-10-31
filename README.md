@@ -1,12 +1,6 @@
-<div>
-  <p align="center">
-    <svg align="center" xmlns="http://www.w3.org/2000/svg" width="100px" height="100px" preserveAspectRatio="xMidYMid meet"
-      viewBox="0 0 16 16">
-    <path fill="#3267a5"
-        d="M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2z" />
-    </svg>
-  </p>
-</div>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/61053131/199010486-75666ad3-556a-4650-bacb-180ae97841d9.svg">
+</p>
 
 # 1. 项目搭建
 
