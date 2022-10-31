@@ -1,5 +1,5 @@
+import requester from "../request";
 import type { IResponseData } from "../type";
-import { dRequest } from "../index";
 import type { IAccount, ILoginResult } from "./type";
 
 enum LoginAPI {
@@ -9,7 +9,7 @@ enum LoginAPI {
 }
 
 function accountLoginRequest(account: IAccount) {
-  return dRequest.post<IResponseData<ILoginResult>>({
+  return requester.post<IResponseData<ILoginResult>>({
     url: LoginAPI.AccountLogin,
     data: account,
     showLoading: true,
@@ -17,13 +17,13 @@ function accountLoginRequest(account: IAccount) {
 }
 
 function userInfoByIdRequest(id: number) {
-  return dRequest.get<IResponseData>({
+  return requester.get<IResponseData>({
     url: `${LoginAPI.LoginUserInfo}/${id}`,
   });
 }
 
 function userMenusByRoleIdRequest(id: number) {
-  return dRequest.get<IResponseData>({
+  return requester.get<IResponseData>({
     url: `${LoginAPI.UserMenus}/${id}/menu`,
   });
 }
