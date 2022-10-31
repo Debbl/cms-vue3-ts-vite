@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./public/logo.svg" width="100">
+  <img src="src/assets/img/logo.svg" width="100">
 </p>
 
 # 1. 项目搭建
