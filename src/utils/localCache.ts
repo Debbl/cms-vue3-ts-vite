@@ -1,16 +1,16 @@
-class LocalCache {
-  setCache(key: string, value: any) {
-    localStorage.setItem(key, JSON.stringify(value));
+class LocalCache<T extends Record<string, any>> {
+  setCache<P extends keyof T>(key: P, value: T[P]) {
+    localStorage.setItem(key as string, JSON.stringify(value));
   }
 
-  getCache(key: string) {
-    const value = localStorage.getItem(key);
+  getCache<P extends keyof T>(key: P) {
+    const value = localStorage.getItem(key as string);
     if (value) return JSON.parse(value);
   }
 
-  removeCache(key: string) {
-    const value = localStorage.getItem(key);
-    localStorage.removeItem(key);
+  removeCache<P extends keyof T>(key: P) {
+    const value = localStorage.getItem(key as string);
+    localStorage.removeItem(key as string);
     return value;
   }
 
@@ -19,4 +19,8 @@ class LocalCache {
   }
 }
 
-export default new LocalCache();
+export default new LocalCache<{
+  token: string;
+  userInfo: any;
+  userMenus: any;
+}>();

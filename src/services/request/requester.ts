@@ -2,9 +2,7 @@ import type { AxiosInstance } from "axios";
 import type { LoadingInstance } from "element-plus/es/components/loading/src/loading";
 import axios from "axios";
 import { ElLoading } from "element-plus";
-import { BASE_URL, TIMEOUT } from "./config";
 import type { DAxiosRequestConfig, DRequestInterceptors } from "./type";
-import localCache from "~/utils/localCache";
 
 class Requester {
   instance: AxiosInstance;
