@@ -3,7 +3,7 @@ class LocalCache<T extends Record<string, any>> {
     localStorage.setItem(key as string, JSON.stringify(value));
   }
 
-  getCache<P extends keyof T>(key: P) {
+  getCache<P extends keyof T>(key: P): T[P] | undefined {
     const value = localStorage.getItem(key as string);
     if (value) return JSON.parse(value);
   }
@@ -21,6 +21,8 @@ class LocalCache<T extends Record<string, any>> {
 
 export default new LocalCache<{
   token: string;
+  name: string;
+  password: string;
   userInfo: any;
   userMenus: any;
 }>();
