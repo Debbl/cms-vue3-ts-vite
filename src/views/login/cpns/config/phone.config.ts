@@ -1,6 +1,6 @@
 import type { FormRules } from "element-plus";
 
-// 用户名 密码 校验规则
+// 手机号 验证码 校验规则
 const rules: FormRules = {
   phoneNumber: [
     { required: true, message: "请输入手机号" },
