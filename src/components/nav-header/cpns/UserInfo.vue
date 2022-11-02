@@ -10,7 +10,7 @@ import localCache from "~/utils/localCache";
 import router from "~/router";
 
 // 退出登录
-const handelExitLogin = () => {
+const handleExitLogin = () => {
   localCache.removeCache("token");
   router.push("/login");
 };
@@ -27,7 +27,7 @@ const handelExitLogin = () => {
       </span>
       <template #dropdown>
         <ElDropdownMenu>
-          <ElDropdownItem @click="handelExitLogin">退出登录</ElDropdownItem>
+          <ElDropdownItem @click="handleExitLogin">退出登录</ElDropdownItem>
         </ElDropdownMenu>
       </template>
     </ElDropdown>

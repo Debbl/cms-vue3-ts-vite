@@ -1,4 +1,4 @@
-import requester from "../request";
+import requester from "..";
 import type { IResponseData } from "../type";
 import type { ILoginResult } from "./type";
 import type { IAccount } from "~/views/login/cpns/type";

@@ -3,7 +3,7 @@ import { ElAside, ElContainer, ElHeader, ElMain } from "element-plus";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { NavMenu } from "~/components/nav-menu";
-import NavHeader from "~/components/nav-header/cpns/NavHeader.vue";
+import { NavHeader } from "~/components/nav-header";
 import useLoginStore from "~/stores/modules/login.store";
 import { mapMenusToRoutes } from "~/utils/mapMenus";
 
