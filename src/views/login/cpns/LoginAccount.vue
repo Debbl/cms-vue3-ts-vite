@@ -2,11 +2,12 @@
 import { reactive, ref } from "vue";
 import { ElForm, ElFormItem, ElInput, ElMessage } from "element-plus";
 import { rules } from "./config/account.config";
+import type { IAccount } from "./type";
 import localCache from "~/utils/localCache";
 import useLoginStore from "~/stores/modules/login.store";
 
 // 用户名 密码
-const account = reactive({
+const account = reactive<IAccount>({
   name: localCache.getCache("name") ?? "",
   password: localCache.getCache("password") ?? "",
 });

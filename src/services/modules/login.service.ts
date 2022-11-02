@@ -1,6 +1,7 @@
 import requester from "../request";
 import type { IResponseData } from "../type";
-import type { IAccount, ILoginResult } from "./type";
+import type { ILoginResult } from "./type";
+import type { IAccount } from "~/views/login/cpns/type";
 
 enum LoginAPI {
   AccountLogin = "/login",

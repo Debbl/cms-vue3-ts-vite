@@ -1,6 +1,5 @@
 import { defineStore } from "pinia";
 import type { UserMenu } from "./type";
-import type { IAccount } from "~/services/modules/type";
 import {
   accountLoginRequest,
   userInfoByIdRequest,
@@ -8,6 +7,7 @@ import {
 } from "~/services/modules/login.service";
 import localCache from "~/utils/localCache";
 import router from "~/router";
+import type { IAccount } from "~/views/login/cpns/type";
 
 const useLoginStore = defineStore("login", {
   state: (): {
