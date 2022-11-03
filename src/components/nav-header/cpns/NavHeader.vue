@@ -3,6 +3,7 @@ import { ref } from "vue";
 import { ElIcon } from "element-plus";
 import { Expand, Fold } from "@element-plus/icons-vue";
 import UserInfo from "./UserInfo.vue";
+import NavBreadCrumb from "./NavBreadCrumb.vue";
 
 // 折叠菜单
 const emit = defineEmits<{
@@ -21,7 +22,7 @@ const handelFoldClick = () => {
       <component :is="isFold ? Expand : Fold"></component>
     </ElIcon>
     <div class="content">
-      <div>面包屑</div>
+      <NavBreadCrumb />
       <div><UserInfo /></div>
     </div>
   </div>

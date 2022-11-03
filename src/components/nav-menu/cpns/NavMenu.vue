@@ -8,6 +8,7 @@ import {
   Setting,
 } from "@element-plus/icons-vue";
 import { useRoute } from "vue-router";
+import { computed } from "vue";
 import useLoginStore from "~/stores/modules/login.store";
 import { mapPathToMenu } from "~/utils/mapMenus";
 
@@ -34,7 +35,9 @@ const getIconCpn = (icon: string) => {
 
 // 路径和菜单匹配
 const route = useRoute();
-const defaultActive = `${mapPathToMenu(route.path, userMenus.value)?.id}`;
+const defaultActive = computed(
+  () => `${mapPathToMenu(route.path, userMenus.value)?.id}`
+);
 </script>
 
 <template>
