@@ -38,7 +38,7 @@ router.beforeEach((to) => {
   if (to.path === "/login" && token) {
     return "/main";
   }
-  if (to.path !== "/login" && !token) {
+  if (to.path.startsWith("/main") && !token) {
     return "/login";
   }
 });
