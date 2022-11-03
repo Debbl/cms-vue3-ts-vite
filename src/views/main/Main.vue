@@ -3,7 +3,7 @@ import { ElAside, ElContainer, ElHeader, ElMain } from "element-plus";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { NavMenu } from "~/components/nav-menu";
-import NavHeader from "~/components/nav-header/cpns/NavHeader.vue";
+import { NavHeader } from "~/components/nav-header";
 import useLoginStore from "~/stores/modules/login.store";
 import { mapMenusToRoutes } from "~/utils/mapMenus";
 
@@ -16,8 +16,6 @@ const handelFoldChange = (isFold: boolean) => {
 // 添加路由
 const router = useRouter();
 const loginStore = useLoginStore();
-// 初始化用户登陆数据
-loginStore.setupLogin();
 // 初始化动态路由
 const routes = mapMenusToRoutes(loginStore.userMenus);
 routes.forEach((route) => {

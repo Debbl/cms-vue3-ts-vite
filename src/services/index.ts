@@ -1,5 +1,5 @@
-import { BASE_URL, TIMEOUT } from "./config";
-import Requester from "./requester";
+import { BASE_URL, TIMEOUT } from "./request/config";
+import Requester from "./request/requester";
 import localCache from "~/utils/localCache";
 
 const requester = new Requester({

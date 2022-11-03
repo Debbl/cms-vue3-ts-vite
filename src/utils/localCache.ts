@@ -1,4 +1,9 @@
 class LocalCache<T extends Record<string, any>> {
+  storage: Storage;
+  constructor(storage: Storage) {
+    this.storage = storage;
+  }
+
   setCache<P extends keyof T>(key: P, value: T[P]) {
     localStorage.setItem(key as string, JSON.stringify(value));
   }
@@ -26,4 +31,4 @@ export default new LocalCache<{
   isKeepPassword: boolean;
   userInfo: any;
   userMenus: any;
-}>();
+}>(localStorage);

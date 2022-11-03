@@ -35,7 +35,7 @@ const getIconCpn = (icon: string) => {
   <div class="nav-menu">
     <div class="logo">
       <img src="~~/assets/img/logo.svg" alt="" />
-      <span v-if="!props.isCollapse" class="title">Vue3+TS</span>
+      <span v-show="!props.isCollapse" class="title">Vue3+TS</span>
     </div>
     <ElMenu class="el-menu-vertical" :collapse="props.isCollapse" router>
       <template v-for="item in userMenus" :key="item.id">
