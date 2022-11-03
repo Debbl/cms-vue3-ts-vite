@@ -37,7 +37,12 @@ const getIconCpn = (icon: string) => {
       <img src="~~/assets/img/logo.svg" alt="" />
       <span v-show="!props.isCollapse" class="title">Vue3+TS</span>
     </div>
-    <ElMenu class="el-menu-vertical" :collapse="props.isCollapse" router>
+    <ElMenu
+      default-active="39"
+      class="el-menu-vertical"
+      :collapse="props.isCollapse"
+      router
+    >
       <template v-for="item in userMenus" :key="item.id">
         <template v-if="item.type === 1">
           <ElSubMenu :index="`${item.id}`">

@@ -1,6 +1,9 @@
 import type { RouteRecordRaw } from "vue-router";
 import type { UserMenu } from "~/stores/modules/type";
 
+// eslint-disable-next-line import/no-mutable-exports
+export let indexRoute: RouteRecordRaw;
+
 function mapMenusToRoutes(userMenus: UserMenu[]): RouteRecordRaw[] {
   const routes: RouteRecordRaw[] = [];
   const allRoutes: RouteRecordRaw[] = [];
@@ -15,6 +18,7 @@ function mapMenusToRoutes(userMenus: UserMenu[]): RouteRecordRaw[] {
       if (menu.type === 2) {
         const route = allRoutes.find((route) => route.path === menu.url);
         if (route) routes.push(route);
+        if (!indexRoute && route) indexRoute = route;
       } else {
         _recurseGetRoute(menu.children);
       }
