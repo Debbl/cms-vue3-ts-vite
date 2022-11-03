@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ArrowRight } from "@element-plus/icons-vue";
-import { ElBreadcrumb, ElBreadcrumbItem, ElLink } from "element-plus";
+import { ElBreadcrumb, ElBreadcrumbItem } from "element-plus";
 import { computed } from "vue";
 import { useRoute } from "vue-router";
 import useLoginStore from "~/stores/modules/login.store";

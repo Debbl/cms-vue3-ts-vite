@@ -52,6 +52,7 @@ class Requester {
 
   request<T>(config: DAxiosRequestConfig): Promise<T> {
     if (config.interceptors?.requestInterceptor) {
+      // eslint-disable-next-line no-param-reassign
       config = config.interceptors.requestInterceptor(config);
     }
     let loading: LoadingInstance | undefined;
@@ -68,6 +69,7 @@ class Requester {
         .request<any, T>(config)
         .then((res) => {
           if (config.interceptors?.responseInterceptor) {
+            // eslint-disable-next-line no-param-reassign
             res = config.interceptors.responseInterceptor<T>(res) as T;
           }
           loading?.close();
