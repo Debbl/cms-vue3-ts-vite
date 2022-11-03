@@ -16,8 +16,6 @@ const handelFoldChange = (isFold: boolean) => {
 // 添加路由
 const router = useRouter();
 const loginStore = useLoginStore();
-// 初始化用户登陆数据
-loginStore.setupLogin();
 // 初始化动态路由
 const routes = mapMenusToRoutes(loginStore.userMenus);
 routes.forEach((route) => {

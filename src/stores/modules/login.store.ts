@@ -12,22 +12,14 @@ import type { IAccount } from "~/views/login/cpns/type";
 const useLoginStore = defineStore("login", {
   state: (): {
     token: string;
-    userInfo: object;
+    userInfo: any;
     userMenus: UserMenu[];
   } => ({
-    token: "",
-    userInfo: {},
-    userMenus: [],
+    token: localCache.getCache("token") ?? "",
+    userInfo: localCache.getCache("userInfo") ?? {},
+    userMenus: localCache.getCache("userMenus") ?? [],
   }),
   actions: {
-    setupLogin() {
-      const token = localCache.getCache("token");
-      if (token) this.token = token;
-      const userInfo = localCache.getCache("userInfo");
-      if (userInfo) this.userInfo = userInfo;
-      const userMenus = localCache.getCache("userMenus");
-      if (userMenus) this.userMenus = userMenus;
-    },
     async accountLoginAction(account: IAccount) {
       // token
       const loginResult = await accountLoginRequest(account);
