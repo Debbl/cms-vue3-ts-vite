@@ -7,7 +7,9 @@ import {
   Monitor,
   Setting,
 } from "@element-plus/icons-vue";
+import { useRoute } from "vue-router";
 import useLoginStore from "~/stores/modules/login.store";
+import { mapPathToMenu } from "~/utils/mapMenus";
 
 const props = defineProps({
   isCollapse: Boolean,
@@ -29,6 +31,10 @@ const getIconCpn = (icon: string) => {
       return ChatLineRound;
   }
 };
+
+// 路径和菜单匹配
+const route = useRoute();
+const defaultActive = `${mapPathToMenu(route.path, userMenus.value)?.id}`;
 </script>
 
 <template>
@@ -38,7 +44,7 @@ const getIconCpn = (icon: string) => {
       <span v-show="!props.isCollapse" class="title">Vue3+TS</span>
     </div>
     <ElMenu
-      default-active="39"
+      :default-active="defaultActive"
       class="el-menu-vertical"
       :collapse="props.isCollapse"
       router

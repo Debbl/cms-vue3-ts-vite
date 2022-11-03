@@ -1,7 +1,7 @@
 import type { RouteRecordRaw } from "vue-router";
 import { createRouter, createWebHistory } from "vue-router";
 import localCache from "~/utils/localCache";
-import { indexRoute } from "~/utils/mapMenus";
+import { indexMenu } from "~/utils/mapMenus";
 
 const Login = () => import("~/views/login/Login.vue");
 const Main = () => import("~/views/main/Main.vue");
@@ -44,7 +44,7 @@ router.beforeEach((to) => {
   }
 
   if (to.path === "/main") {
-    return indexRoute.path;
+    return indexMenu.url;
   }
 });
 
