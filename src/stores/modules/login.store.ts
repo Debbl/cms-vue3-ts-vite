@@ -8,6 +8,7 @@ import {
 import localCache from "~/utils/localCache";
 import router from "~/router";
 import type { IAccount } from "~/views/login/cpns/type";
+import { mapMenusToRoutes } from "~/utils/mapMenus";
 
 const useLoginStore = defineStore("login", {
   state: (): {
@@ -36,10 +37,25 @@ const useLoginStore = defineStore("login", {
       const userMenus = userMenusResult.data;
       this.userMenus = userMenus;
       localCache.setCache("userMenus", userMenus);
+
       // 登录成功跳转
       router.push("/main");
     },
     // 添加 routes 到 main 的 children
+    loadLocalUserData() {
+      const token = localCache.getCache("token");
+      const userInfo = localCache.getCache("userInfo");
+      const userMenus = localCache.getCache("userMenus");
+      if (token && userInfo && userMenus) {
+        this.token = token;
+        this.userInfo = userInfo;
+        this.userMenus = userMenus;
+      }
+      const routes = mapMenusToRoutes(this.userMenus);
+      routes.forEach((route) => {
+        router.addRoute("main", route);
+      });
+    },
   },
 });
 

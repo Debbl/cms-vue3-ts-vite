@@ -4,7 +4,7 @@ import type { UserMenu } from "~/stores/modules/type";
 function mapMenusToRoutes(userMenus: UserMenu[]): RouteRecordRaw[] {
   const routes: RouteRecordRaw[] = [];
   const allRoutes: RouteRecordRaw[] = [];
-  const rotesFiles = import.meta.glob("../router/main/**/*.ts", {
+  const rotesFiles = import.meta.glob("~/router/main/**/*.ts", {
     eager: true,
   });
   Object.values(rotesFiles).forEach((RouteComponent: any) => {
