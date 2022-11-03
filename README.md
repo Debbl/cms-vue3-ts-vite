@@ -151,3 +151,5 @@ const About = () => import("@/views/About.vue");
 ## 4.1 登录
 
 - 登录验证，获取 token
+- 记住密码
+- 根据角色获取菜单 RBAC
