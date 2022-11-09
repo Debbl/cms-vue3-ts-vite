@@ -38,6 +38,11 @@ const useLoginStore = defineStore("login", {
       this.userMenus = userMenus;
       localCache.setCache("userMenus", userMenus);
 
+      const routes = mapMenusToRoutes(this.userMenus);
+      routes.forEach((route) => {
+        router.addRoute("main", route);
+      });
+
       // 登录成功跳转
       router.push("/main");
     },
